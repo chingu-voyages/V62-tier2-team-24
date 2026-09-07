@@ -36,6 +36,7 @@ coding!
 
 - Yangchen Dema (Scrum Master): [GitHub](https://github.com/dema66) / [LinkedIn](https://www.linkedin.com/in/yangchendema/)
 - Abiola Tijani (Developer): [GitHub](https://github.com/polanty) / [LinkedIn](https://www.linkedin.com/in/abiola-tijani-polanty/)
+- Bader Amer (Developer): [GitHub](https://github.com/baderamer-dev)
 
    ...
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
