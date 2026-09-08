@@ -1,0 +1,14 @@
+{
+  "name": "voyage-tasks",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "jest": "^30.1.3"
+  }
+}
