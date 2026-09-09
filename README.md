@@ -38,7 +38,8 @@ coding!
 - Abiola Tijani (Developer): [GitHub](https://github.com/polanty) / [LinkedIn](https://www.linkedin.com/in/abiola-tijani-polanty/)
 - Bader Amer (Developer): [GitHub](https://github.com/baderamer-dev)
 - Anatolii Lukianenko (Developer): [GitHub](https://github.com/lukasemperfi)
-- Ayoub Ouachra (Developer): [GitHub](https://github.com/lobisloby) 
+- Ayoub Ouachra (Developer): [GitHub](https://github.com/lobisloby)
+- Hadeel ALTalli (Shadow Scrum Master) : [GitHub](https://github.com/Hadeel-AL-Talli) / [LinkedIn](https://www.linkedin.com/in/hadeel-tali/)
   ...
 
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
