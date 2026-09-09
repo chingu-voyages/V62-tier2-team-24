@@ -38,7 +38,7 @@ coding!
 - Abiola Tijani (Developer): [GitHub](https://github.com/polanty) / [LinkedIn](https://www.linkedin.com/in/abiola-tijani-polanty/)
 - Bader Amer (Developer): [GitHub](https://github.com/baderamer-dev)
 - Anatolii Lukianenko (Developer): [GitHub](https://github.com/lukasemperfi)
-- Ayoub Ouachra (Developer): [GitHub](https://github.com/lobisloby) / [LinkedIn](https://linkedin.com/in/ayoub-ouachra-coder)
+- Ayoub Ouachra (Developer): [GitHub](https://github.com/lobisloby) 
   ...
 
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
