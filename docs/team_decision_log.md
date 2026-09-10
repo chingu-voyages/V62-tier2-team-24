@@ -1,43 +1,16 @@
 # Team Decision Log
 
-Update this with key decisions your team makes that you need to make...and 
-remember. The entries in this table are only examples. You may add, change, or
-delete these based on the needs of your team.
+Record key decisions here so the team can remember *what* was chosen and *why*.
 
-To set this up add each teammates name in the `teammate name` column. Each 
-team member should Place an 'X' under their name to vote for the ideas 
-you like the best.
-
-| No. | Question/Option | Teammate name | Teammate name | Teammate name | Teammate name | Teammate name | Teammate name |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Team meeting schedule | | | | | | |
-|   |	- Sprint Planning Sunday@9:00 a.m. CST | | | | | | |
-|   |	- Knowledge Xfer as needed | | | | | | |
-|   |	- Working Session Thursday@4:00 p.m. CST | | | | | | |
-| 2	| Project Backlog Tool | | | | | | |
-|   |	- Notion | | | | | | |
-|   |	- Jira | | | | | | |
-| 3	| Technical Stack (vote by adding your pref. in the cell under your name) | | | | | | |
-|   |	- BE Language | | | | | | |
-|   |	- FE Language | | | | | | |
-|   |	- FE Framework | | | | | | |
-|   |	- ML Framework | | | | | | |
-|   |	- Visualization/Graphics package (if required, e.g. D3, Nivo, etc.) | | | | | | |
-| 4	| Where to host the app? | | | | | | |
-|   |	- Heroku (suitable for FE, BE, & Postgres) | | | | | | |
-|   |	- Netlify (suitable only for FE) | | | | | | |
-|   |	- Vercel (suitable only for FE) | | | | | | |
-|   |	- Mongo Atlas (suitable only for MongoDB) | | | | | | |
-| 5	| BE/FE repos organization | | | | | | |
-|   |	- Separate GitHub repos for each | | | | | | |
-|   |	- Single GitHub repo for both | | | | | | |
-| 6	| Wireframing tool | | | | | | |
-|   |	- Paper & pencil | | | | | | |
-|   |	- Adobe XD | | | | | | |
-|   |	- Balsamiq | | | | | | |
-|   |	- Figma | | | | | | |
-| 7	| Who works in which part of the app? | | | | | | |
-|   | - BE (not applicable for Tier 1 teams) | | | | | | |
-|   |	- FE | | | | | | |
-| 8	| ... | | | | | | |
-| n | ... | | | | | | |
+| No. | Question / option | Decision | Notes |
+| :--- | :--- | :--- | :--- |
+| 1 | Repo organization | Single GitHub repo for frontend and backend | Next.js App Router hosts pages and API routes together |
+| 2 | Frontend | Next.js 16 (App Router) + React 19 + TypeScript | `src/` directory, import alias `@/*` |
+| 3 | Styling / UI | Tailwind CSS v4 + shadcn/ui + lucide-react | Theme tokens live in `src/app/globals.css` |
+| 4 | Forms / validation | react-hook-form + zod | Installed; not wired yet |
+| 5 | Auth / database | Firebase | Client SDK in `src/lib/firebase.ts`; Admin placeholder in `src/backend/firebaseAdmin.ts` |
+| 6 | Path generation | Server API route `/api/generate-path` | Placeholder in `src/backend/aiService.ts` |
+| 7 | Hosting (planned) | Vercel (typical for Next.js) | Not deployed yet |
+| 8 | Package manager | npm | `package-lock.json` committed; Node.js 20+ |
+| 9 | CI | GitHub Actions | Runs `npm test` on PRs and pushes to `main` |
+| 10 | Local secrets | `.env.local` (gitignored) | Copy from `.env.example` |
