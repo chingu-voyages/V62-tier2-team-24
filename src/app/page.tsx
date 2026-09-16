@@ -9,7 +9,7 @@ export default function Home() {
         Application layout placeholder.
       </p>
       <Button asChild className="mt-6">
-        <Link href="/result">Go to Result Page</Link>
+        <Link href="/dashboard">Go to Dashboard</Link>
       </Button>
     </main>
   );
