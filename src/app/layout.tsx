@@ -17,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn(" font-sans", geist.variable)}>
-      <body className="min-h-screen  antialiased flex flex-col">
-        <main className="flex-1">{children}</main>
-      </body>
+      <body className="min-h-screen antialiased flex flex-col">{children}</body>
     </html>
   );
 }
