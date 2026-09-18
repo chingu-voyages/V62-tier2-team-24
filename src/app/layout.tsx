@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "V62 Tier 2 Team 24",
-  description: "Learning path application",
+  title: "PathBuilder",
+  description: "AI-powered learning path application",
 };
 
 export default function RootLayout({
