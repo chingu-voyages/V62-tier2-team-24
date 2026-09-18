@@ -1,8 +1,13 @@
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-export function Logo() {
+interface LogoProps {
+  className?: string;
+}
+
+export function Logo({ className }: LogoProps) {
   return (
-    <Link href="/" className="flex items-center gap-3 transition-opacity ">
+    <Link href="/" className={cn("flex items-center gap-3 ", className)}>
       <div className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#06B6D4] to-[#10B981]">
         <svg
           width="20"

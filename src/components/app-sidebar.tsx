@@ -12,6 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { Logo } from "@/components/ui/logo";
 
 const data = {
   navMain: [
@@ -36,6 +37,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
+        <Logo className="p-2" />
         <SearchForm />
       </SidebarHeader>
       <SidebarContent>

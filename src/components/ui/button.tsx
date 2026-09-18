@@ -21,6 +21,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         gradient:
           "border-0 bg-gradient-to-r from-[#10B981] to-[#06B6D4] text-white shadow-[0px_0px_16px_rgba(16,185,129,0.3)] hover:opacity-90 transition-all active:scale-[0.98]",
+        emeraldGradient:
+          "bg-gradient-to-r from-[rgba(16,185,129,0.15)] to-[rgba(6,182,212,0.15)] border border-[#10B981]/30 text-[#10B981] hover:from-[rgba(16,185,129,0.25)] hover:to-[rgba(6,182,212,0.25)] transition-all",
       },
       size: {
         default:
