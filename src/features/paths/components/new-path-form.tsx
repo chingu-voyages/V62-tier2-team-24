@@ -39,12 +39,18 @@ export function NewPathForm() {
 
   const onSubmit = async (values: CreatePathValues) => {
     try {
-      const response = await generatePath(values);
-      if (response?.id) {
-        router.push(`/paths/${response.id}`);
+      const learningPath = await generatePath(values);
+      console.log("[NewPathForm] Generated learning path:", learningPath);
+      if (learningPath?.id) {
+        // Stash the full object so the detail page can display it
+        sessionStorage.setItem(
+          `learning-path:${learningPath.id}`,
+          JSON.stringify(learningPath),
+        );
+        router.push(`/paths/${learningPath.id}`);
       }
     } catch (error) {
-      console.error("Failed to generate path:", error);
+      console.error("[NewPathForm] Failed to generate path:", error);
     }
   };
 
