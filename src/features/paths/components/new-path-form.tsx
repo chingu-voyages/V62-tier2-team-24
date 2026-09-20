@@ -43,17 +43,13 @@ export function NewPathForm() {
   const onSubmit = async (values: CreatePathValues) => {
     setIsGenerating(true);
     try {
-      // Local only: uncomment to keep the loading overlay visible for 1s.
-      // await new Promise((resolve) => setTimeout(resolve, 1000));
       const response = await generatePath(values);
       if (response?.id) {
         router.push(`/paths/${response.id}`);
-        return;
       }
       setIsGenerating(false);
     } catch (error) {
       console.error("Failed to generate path:", error);
-      setIsGenerating(false);
     }
   };
 

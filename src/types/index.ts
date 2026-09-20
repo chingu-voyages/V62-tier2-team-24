@@ -11,6 +11,44 @@ export type CreatePathInput = {
   weeklyHours: WeeklyHours;
 };
 
-export type GeneratePathResponse = {
+// ── AI service types (mirrors data-flow doc) ────────────────────────────────
+
+export interface LearningPathParams {
+  goal: string;
+  skillLevel: SkillLevel;
+  background?: string;
+  weeklyHours: WeeklyHours;
+}
+
+export interface AIError {
+  code: "AI_TIMEOUT" | "AI_REQUEST_FAILED" | "INVALID_JSON" | "INVALID_SCHEMA";
+  message: string;
+}
+
+export interface LearningPathStep {
+  stepNumber: number;
+  title: string;
+  description: string;
+  estimatedWeeks: number;
+}
+
+export interface LearningPath {
   id: string;
-};
+  goal: string;
+  skillLevel: SkillLevel;
+  totalSteps: number;
+  steps: LearningPathStep[];
+  createdAt: string;
+}
+
+export interface InteractiveLearningPathStep extends LearningPathStep {
+  completed: boolean;
+}
+
+export interface InteractiveLearningPath extends Omit<LearningPath, "steps"> {
+  steps: InteractiveLearningPathStep[];
+}
+
+// ── API response ─────────────────────────────────────────────────────────────
+
+export type GeneratePathResponse = LearningPath;
