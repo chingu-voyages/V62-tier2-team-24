@@ -25,6 +25,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export function NewPathForm() {
   const router = useRouter();
   const [isGenerating, setIsGenerating] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<
     z.input<typeof createPathSchema>,
@@ -42,6 +43,7 @@ export function NewPathForm() {
 
   const onSubmit = async (values: CreatePathValues) => {
     setIsGenerating(true);
+    setError(null);
     try {
       const response = await generatePath(values);
       if (response?.id) {
@@ -51,6 +53,7 @@ export function NewPathForm() {
       setIsGenerating(false);
     } catch (error) {
       console.error("Failed to generate path:", error);
+      setError("Something went wrong while generating your path. Please try again.");
       setIsGenerating(false);
     }
   };
@@ -175,6 +178,11 @@ export function NewPathForm() {
             >
               {isGenerating ? "Generating Path..." : "Generate Learning Path"}
             </Button>
+            {error && (
+              <p role="alert" className="text-sm text-destructive text-center">
+                {error}
+              </p>
+            )}
           </fieldset>
         </form>
       </CardContent>
