@@ -45,11 +45,13 @@ export function NewPathForm() {
     try {
       const response = await generatePath(values);
       if (response?.id) {
+        sessionStorage.setItem(`learning-path:${response.id}`, JSON.stringify(response));
         router.push(`/paths/${response.id}`);
       }
       setIsGenerating(false);
     } catch (error) {
       console.error("Failed to generate path:", error);
+      setIsGenerating(false);
     }
   };
 
