@@ -1,18 +1,19 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Navbar() {
   return (
     <header className="border-b border-border bg-background">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
         <Link href="/" className="text-base font-semibold tracking-tight">
-          PathBuilder
+          Waypoint
         </Link>
         <nav className="flex items-center gap-4 text-sm">
           <Link
             href="/dashboard"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
-            Dashboard
+            Results
           </Link>
           <Link
             href="/paths/new"
@@ -21,11 +22,12 @@ export default function Navbar() {
             New Path
           </Link>
           <Link
-            href="/(auth)/login"
+            href="/login"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             Login
           </Link>
+          <ThemeToggle />
         </nav>
       </div>
     </header>
