@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ResultsLink } from "@/components/results-link";
 
 export default function Navbar() {
   return (
@@ -9,12 +10,9 @@ export default function Navbar() {
           Waypoint
         </Link>
         <nav className="flex items-center gap-4 text-sm">
-          <Link
-            href="/dashboard"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
+          <ResultsLink className="text-muted-foreground hover:text-foreground transition-colors">
             Results
-          </Link>
+          </ResultsLink>
           <Link
             href="/paths/new"
             className="rounded-lg bg-primary px-3 py-1.5 text-primary-foreground hover:bg-primary/80 transition-colors"

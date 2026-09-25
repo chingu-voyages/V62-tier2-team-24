@@ -92,7 +92,7 @@ export default function Home() {
 
       <section className="mt-24 w-full text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Why PathBuilder
+          Why Waypoint
         </p>
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
           Everything you need to <span className="text-primary">level up</span>
