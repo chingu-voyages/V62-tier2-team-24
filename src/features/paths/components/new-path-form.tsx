@@ -51,6 +51,11 @@ export function NewPathForm() {
           `learning-path:${response.id}`,
           JSON.stringify(response),
         );
+        localStorage.setItem(
+          `learning-path:${response.id}`,
+          JSON.stringify(response),
+        );
+        localStorage.setItem("last-learning-path-id", response.id);
         router.push(`/paths/${response.id}`);
       }
       setIsGenerating(false);
