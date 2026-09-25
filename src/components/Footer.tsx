@@ -1,11 +1,7 @@
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-6 text-sm text-muted-foreground">
-        <p>
-          <span className="font-semibold text-foreground">Waypoint</span>
-          {" · "}© 2026 Voyage 62. All rights reserved.
-        </p>
+      <div className="mx-auto flex max-w-5xl items-center justify-center px-6 py-6 text-sm text-muted-foreground">
         <a
           href="https://github.com/chingu-voyages/V62-tier2-team-24"
           target="_blank"
