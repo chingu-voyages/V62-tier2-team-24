@@ -75,21 +75,6 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="mt-16 flex w-full max-w-2xl flex-wrap items-center justify-center gap-8 border-t border-border pt-10 text-sm">
-        <div>
-          <p className="text-2xl font-bold">50K+</p>
-          <p className="mt-1 text-muted-foreground">Paths Generated</p>
-        </div>
-        <div>
-          <p className="text-2xl font-bold">98%</p>
-          <p className="mt-1 text-muted-foreground">Satisfaction Rate</p>
-        </div>
-        <div>
-          <p className="text-2xl font-bold">4.9 ★</p>
-          <p className="mt-1 text-muted-foreground">Average Rating</p>
-        </div>
-      </div>
-
       <section className="mt-24 w-full text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
           Why Waypoint
