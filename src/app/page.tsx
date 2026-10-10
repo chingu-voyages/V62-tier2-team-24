@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { HomeCtas } from "./home-ctas";
-import { StarryBackground } from "@/components/starry-background";
 import {
   BarChart3,
   Database,
@@ -46,7 +45,6 @@ const features = [
 export default function Home() {
   return (
     <div className="relative">
-      <StarryBackground />
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 py-20 text-center">
         <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl">
           Your learning path
