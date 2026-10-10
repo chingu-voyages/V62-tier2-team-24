@@ -85,10 +85,10 @@ export default function DashboardPage() {
                     className="group rounded-2xl border border-border/50 bg-card/50 p-5 shadow-sm backdrop-blur transition hover:border-border hover:bg-card/70"
                   >
                     <div className="flex flex-wrap items-start gap-2">
-                      <span className="rounded-full border border-border bg-muted/60 px-2.5 py-0.5 text-[11px] font-medium">
+                      <span className="rounded-full border border-border bg-muted/60 px-2.5 py-0.5 text-xs font-medium">
                         {path.goal}
                       </span>
-                      <span className="rounded-full border border-border px-2.5 py-0.5 text-[11px] capitalize text-muted-foreground">
+                      <span className="rounded-full border border-border px-2.5 py-0.5 text-xs capitalize text-muted-foreground">
                         {path.skillLevel}
                       </span>
                     </div>
