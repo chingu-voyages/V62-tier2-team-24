@@ -132,13 +132,6 @@ function AuthedControls({
       {open && (
         <div className="absolute right-0 top-full z-50 mt-2 w-44 rounded-lg border border-border bg-card p-1 shadow-md">
           <p className="px-3 py-1.5 text-sm font-medium">{user.username}</p>
-          <Link
-            href="/dashboard"
-            className="block rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-            onClick={() => setOpen(false)}
-          >
-            Dashboard
-          </Link>
           <button
             type="button"
             onClick={onLogout}
