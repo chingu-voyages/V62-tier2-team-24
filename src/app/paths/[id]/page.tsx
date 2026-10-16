@@ -259,8 +259,6 @@ export default function PathDetailPage() {
     <div className="fixed inset-x-0 bottom-0 top-14 z-20 flex flex-col overflow-hidden bg-background font-sans text-foreground transition-colors">
       <div className="dashboard-grid" aria-hidden="true">
         <span />
-        <span />
-        <span />
       </div>
       <div className="relative z-10 flex min-h-0 flex-1 overflow-hidden">
         {/* ── Sidebar ────────────────────────────────────────────────────── */}

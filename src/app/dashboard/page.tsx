@@ -32,8 +32,6 @@ export default function DashboardPage() {
     <div className="relative flex-1  overflow-hidden bg-background text-foreground">
       <div className="dashboard-grid" aria-hidden="true">
         <span />
-        <span />
-        <span />
       </div>
       <div className="relative z-10 mx-auto max-w-5xl px-6 py-12">
         <div className="flex items-center justify-between gap-4">
