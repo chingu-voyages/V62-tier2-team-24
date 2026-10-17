@@ -259,8 +259,6 @@ export default function PathDetailPage() {
     <div className="fixed inset-x-0 bottom-0 top-14 z-20 flex flex-col overflow-hidden bg-background font-sans text-foreground transition-colors">
       <div className="dashboard-grid" aria-hidden="true">
         <span />
-        <span />
-        <span />
       </div>
       <div className="relative z-10 flex min-h-0 flex-1 overflow-hidden">
         {/* ── Sidebar ────────────────────────────────────────────────────── */}
@@ -438,7 +436,7 @@ export default function PathDetailPage() {
 
           {/* Roadmap */}
           <section className="min-h-0 w-full flex-1 overflow-y-auto">
-            <div className="mx-auto flex w-full max-w-[780px] flex-col items-center px-5 pb-20 pt-16 md:px-8">
+            <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center px-5 pb-20 pt-16 md:px-8">
               <div className="relative w-full">
                 <div className="absolute bottom-0 left-5 top-0 w-px bg-border md:left-1/2" />
                 <div className="relative space-y-16 md:space-y-28">
@@ -460,7 +458,7 @@ export default function PathDetailPage() {
                       >
                         <article
                           tabIndex={0}
-                          className={`group relative w-full max-w-[320px] rounded-2xl border bg-card p-6 text-card-foreground shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                          className={`group relative w-full max-w-[460px] rounded-2xl border bg-card p-6 text-card-foreground shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                             isRegenerating
                               ? "border-violet-500/30"
                               : isCompleted
