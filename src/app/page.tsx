@@ -6,7 +6,6 @@ import {
   Clock3,
   Database,
   RefreshCw,
-  Sparkles,
   Target,
   User,
   Zap,
@@ -61,19 +60,11 @@ export default function Home() {
     <div className="relative overflow-x-clip">
       <div className="relative z-10 mx-auto max-w-5xl px-6 pb-24 pt-10 sm:pt-16">
         {/* Hero */}
-        <section className="grid items-center gap-14 lg:grid-cols-[1.3fr_1fr] lg:gap-10">
+        <section className="grid items-center gap-14 lg:grid-cols-[1.3fr_1fr] lg:items-start lg:gap-10">
           <div className="text-center lg:text-left">
-            <span
-              className="landing-rise inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700 backdrop-blur dark:text-emerald-300"
-              style={rise(0)}
-            >
-              <Sparkles className="size-3.5" />
-              AI-powered learning roadmaps
-            </span>
-
             <h1
-              className="landing-rise mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:whitespace-nowrap lg:text-[3.1rem]"
-              style={rise(100)}
+              className="landing-rise text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:whitespace-nowrap lg:text-[3.3rem]"
+              style={rise(0)}
             >
               Your learning path
               <br />
@@ -85,7 +76,7 @@ export default function Home() {
               style={rise(200)}
             >
               Stop guessing what to learn next. Our AI analyzes your goals,
-              current skills, and available time to generate a precise,
+              current skills, and available time to generate a precise, <br/>
               step-by-step learning path tailored for you.
             </p>
 

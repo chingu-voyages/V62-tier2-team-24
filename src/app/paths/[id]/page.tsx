@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import type { MouseEvent } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { TourHint, useResultTour } from "./result-tour";
+import { TOUR_TIPS, TourCallout, useResultTour } from "./result-tour";
 import {
   CheckCircle2,
   Circle,
@@ -37,7 +37,26 @@ export default function PathDetailPage() {
   const [notFound, setNotFound] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [pathSearch, setPathSearch] = useState("");
-  const tour = useResultTour();
+  const tour = useResultTour({ canRegenerate: isLoggedIn });
+
+  const tourTip = (
+    id: number,
+    className: string,
+    arrow?: "left" | "right",
+  ) => (
+    <TourCallout
+      id={id}
+      step={tour.step}
+      title={TOUR_TIPS[id].title}
+      text={TOUR_TIPS[id].text}
+      position={tour.position}
+      total={tour.total}
+      arrow={arrow}
+      onAdvance={tour.advance}
+      onSkip={tour.skip}
+      className={className}
+    />
+  );
   // Track which steps are currently being toggled to prevent double-clicks
   const [togglingSteps, setTogglingSteps] = useState<Set<number>>(new Set());
   // Track which steps are being regenerated
@@ -269,7 +288,7 @@ export default function PathDetailPage() {
           >
             <Plus className="size-4" /> New Path
           </Link>
-          <div className="relative mt-6">
+          <div className={`relative mt-6 rounded-lg ${tour.spotlight(0)}`}>
             <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <input
               type="text"
@@ -289,14 +308,7 @@ export default function PathDetailPage() {
                 <X className="size-3.5" />
               </button>
             )}
-            <TourHint
-              id={0}
-              step={tour.step}
-              text="Search your paths by goal, level, or step."
-              isLast={tour.isLast}
-              onAdvance={tour.advance}
-              className="left-0 top-full mt-2"
-            />
+            {tourTip(0, "left-0 top-full mt-3")}
           </div>
           <p className="mb-2 mt-4 text-[10px] font-bold uppercase tracking-[.14em] text-muted-foreground">
             Learning Paths
@@ -325,7 +337,7 @@ export default function PathDetailPage() {
                       isActive
                         ? "border-emerald-500/25 bg-emerald-500/[.08]"
                         : "border-transparent hover:border-border hover:bg-muted/50"
-                    }`}
+                    } ${pathIndex === 0 ? tour.spotlight(1) : ""}`}
                   >
                     <div className="flex items-center gap-3">
                       <span
@@ -360,16 +372,7 @@ export default function PathDetailPage() {
                       />
                     </div>
                   </Link>
-                  {pathIndex === 0 && (
-                    <TourHint
-                      id={1}
-                      step={tour.step}
-                      text="Each path keeps its own progress here."
-                      isLast={tour.isLast}
-                      onAdvance={tour.advance}
-                      className="left-0 top-full mt-2"
-                    />
-                  )}
+                  {pathIndex === 0 && tourTip(1, "left-0 top-full mt-3")}
                 </div>
               );
             })}
@@ -415,15 +418,10 @@ export default function PathDetailPage() {
               </div>
             </div>
             {/* Progress bar */}
-            <div className="relative mt-7 flex items-center gap-4">
-              <TourHint
-                id={2}
-                step={tour.step}
-                text="This bar fills as you complete steps."
-                isLast={tour.isLast}
-                onAdvance={tour.advance}
-                className="right-0 top-full mt-2"
-              />
+            <div
+              className={`relative mt-7 flex items-center gap-4 rounded-lg ${tour.spotlight(2)}`}
+            >
+              {tourTip(2, "right-0 top-full mt-3", "right")}
               <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 transition-all duration-500"
@@ -464,7 +462,7 @@ export default function PathDetailPage() {
                               : isCompleted
                                 ? "border-emerald-500/30 bg-emerald-500/[.04]"
                                 : "border-border"
-                          }`}
+                          } ${index === 0 ? tour.spotlight(3) : ""}`}
                         >
                           {/* ── Regenerating skeleton overlay ── */}
                           {isRegenerating ? (
@@ -499,17 +497,23 @@ export default function PathDetailPage() {
                                 </span>
                                 {/* Regenerate button — logged-in users only */}
                                 {isLoggedIn && (
-                                  <button
-                                    type="button"
-                                    aria-label={`Regenerate step ${step.stepNumber}`}
-                                    disabled={isToggling || isRegenerating}
-                                    onClick={() =>
-                                      handleRegenerateStep(step.stepNumber)
-                                    }
-                                    className="rounded-full p-1 text-muted-foreground/50 transition-colors hover:bg-muted hover:text-violet-500 disabled:opacity-40"
-                                  >
-                                    <RefreshCw className="size-3.5" />
-                                  </button>
+                                  <span className="relative">
+                                    <button
+                                      type="button"
+                                      aria-label={`Regenerate step ${step.stepNumber}`}
+                                      disabled={isToggling || isRegenerating}
+                                      onClick={() =>
+                                        handleRegenerateStep(step.stepNumber)
+                                      }
+                                      className={`rounded-full p-1 text-muted-foreground/50 transition-colors hover:bg-muted hover:text-violet-500 disabled:opacity-40 ${
+                                        index === 0 ? tour.spotlight(4) : ""
+                                      }`}
+                                    >
+                                      <RefreshCw className="size-3.5" />
+                                    </button>
+                                    {index === 0 &&
+                                      tourTip(4, "left-0 top-full mt-3")}
+                                  </span>
                                 )}
                                 {/* Toggle button */}
                                 <button
@@ -629,14 +633,7 @@ export default function PathDetailPage() {
                           )}
                         </span>
                         {index === 0 && (
-                          <TourHint
-                            id={3}
-                            step={tour.step}
-                            text="Hover a step to open its links."
-                            isLast={tour.isLast}
-                            onAdvance={tour.advance}
-                            className="left-16 top-full mt-3 md:left-0"
-                          />
+                          tourTip(3, "left-16 top-full mt-3 md:left-0")
                         )}
                       </div>
                     );
